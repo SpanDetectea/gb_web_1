@@ -172,16 +172,16 @@ body {
   z-index: 10;
 }
 .items1 {
-  background: url("/img/Layer\ 43.svg");
+  background: url("img/Layer\ 43.svg");
 }
 .items2 {
-  background: url("/img/Rectangle\ 30.svg");
+  background: url("img/Rectangle\ 30.svg");
 }
 .items3 {
-  background: url("/img/kid.svg");
+  background: url("img/kid.svg");
 }
 .items4 {
-  background: url("/img/accesories.svg");
+  background: url("img/accesories.svg");
   grid-area: 2/1/3/4;
 }
 .products {
@@ -227,7 +227,7 @@ body {
   width: 100%;
   height: 72%;
   content: "";
-  background-image: url("/img/cart.svg");
+  background-image: url("img/cart.svg");
   background-repeat: no-repeat;
   background-position: center;
   /* content: "Add to Cart"; */
