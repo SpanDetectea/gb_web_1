@@ -502,7 +502,7 @@ body {
 
 .collections {
     margin: 0 $marginContent;
-    box-shadow: 0px 0px 12px 2px rgba(34, 60, 80, 0.14);
+    box-shadow: $shadow;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -510,6 +510,7 @@ body {
     top: -65px;
     background-color: #fff;
     z-index: 10;
+
     &__title {
         margin-top: 65px;
         color: $mainColor;
@@ -568,6 +569,7 @@ body {
             transform: rotate(90deg);
             margin: 0 0 0 9px;
         }
+
         details[open] summary:after {
             content: ">";
             font-weight: bold;
@@ -584,12 +586,110 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap:22px;
+        gap: 22px;
     }
 }
+
 .catalogsProducts {
     grid-template-rows: repeat(1, 587px);
 }
+
+.catalog {
+    margin: 51px 230px 96px 230px;
+    display: flex;
+
+    &__head {
+        margin-bottom: 64px;
+        position: relative;
+
+        &__filter {
+            font-size: 14px;
+            list-style: none;
+            padding: 16px;
+            // position: relative;
+            // border: 1px solid red;
+
+            & div {
+                margin-top: 16px;
+                min-width: 328px;
+                // position: absolute;
+                background-color: #fff;
+            }
+
+            &[open] {
+                color: $mainColor;
+                box-shadow: $shadow;
+            }
+
+            &__title {
+                list-style: none;
+                min-width: 74px;
+                display: flex;
+                gap: 11px;
+                align-items: center;
+
+                &__content {
+                    padding-top: 16px;
+                    padding-bottom: 16px;
+                    &[open] summary {
+                        color: $mainColor;
+                    }
+                    & summary {
+                        color: black;
+                        list-style: none;
+                        padding: 11px;
+                        border-left: 5px solid $mainColor;
+                        border-bottom: 1px solid rgba(235, 235, 235, 1);
+                    }
+                    &>div {
+                        padding: 16px;
+                        color: black;
+                    }
+                }
+            }
+
+            margin-right: 320px;
+
+            &[open] path {
+                fill: $mainColor;
+            }
+        }
+
+        &__sort {
+            display: flex;
+            gap: 28px;
+            left: calc(390px + 230px);
+            position: absolute;
+            &__values {
+                position: relative;
+
+                &__wrapper {
+                    // position: relative;
+                    left: -10px;
+                    margin-top: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 79px;
+                    position: absolute;
+                    box-shadow: $shadow;
+                    gap: 8px;
+                    padding: 8px 0 8px 8px;
+                }
+
+                &__title {
+                    list-style: none;
+                    display: flex;
+
+                    &>img {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 @media (min-width: 1650px) {
     .content {
         max-width: 100%;
