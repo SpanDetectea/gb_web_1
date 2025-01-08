@@ -13,26 +13,58 @@ body {
   width: 100%;
   height: 75px;
   background-color: #222222;
+  overflow: hidden;
 }
-
-.logo {
+.header__logo {
   float: left;
   margin-top: 18px;
   margin-left: 231px;
   height: 38px;
 }
-.logo_img1 {
+.header__logo__img1 {
   width: 44px;
   margin-right: 41px;
+  cursor: pointer;
 }
-.logo__img2 {
+.header__logo__img2 {
   width: 26px;
+  cursor: pointer;
 }
-
-.menu {
+.header__menu {
   float: right;
   margin-top: 26px;
   margin-right: 240px;
+  display: flex;
+}
+.header__menu__details__summary {
+  list-style: none;
+  cursor: pointer;
+}
+.header__menu__content {
+  position: absolute;
+  right: -232px;
+  top: 75px;
+  z-index: 1000;
+  background: #FFF;
+  width: 232px;
+}
+.header__menu__details[open] .header__menu__content {
+  right: 0;
+  transition: right 1s;
+}
+.header__menu__content__title {
+  padding: 37px 0 24px 34px;
+}
+.header__menu__content__lists {
+  padding-left: 33px;
+  list-style: none;
+}
+.header__menu__content__lists__title {
+  color: #FF6A6A;
+}
+.header__menu__content__lists__items {
+  color: rgb(111, 110, 110);
+  padding: 11px 22px;
 }
 
 .center {
@@ -69,61 +101,6 @@ body {
   height: 100%;
   background-color: #F16D7F;
   border: 1px solid #F16D7F;
-}
-.content__menu {
-  position: absolute;
-  width: 232px;
-  height: 634px;
-  top: 0;
-  padding-top: 75px;
-  right: 0;
-  padding-left: 50px;
-}
-.content__menu:hover {
-  z-index: 11;
-}
-.content__menu__title {
-  z-index: 4;
-  font-size: 14px;
-  font-weight: 700;
-  margin: 32px 0 24px 33px;
-}
-.content__menu__lists {
-  margin-left: 32px;
-  margin-bottom: 20px;
-}
-.content__menu__lists__title {
-  font-size: 14px;
-  font-weight: 400;
-  color: #F16D7F;
-  list-style-type: none;
-}
-.content__menu__lists__items {
-  font-size: 14px;
-  font-weight: 400;
-  color: #6F6E6E;
-  list-style-type: none;
-  margin: 12px 0 12px 22px;
-}
-
-.fon1 {
-  position: absolute;
-  width: 50px;
-  height: 559px;
-  top: 75px;
-  padding-top: 75px;
-  right: 0;
-  margin-right: 232px;
-  z-index: 1;
-}
-
-.fon2 {
-  position: absolute;
-  width: 232px;
-  height: 75px;
-  top: 0;
-  right: 0;
-  z-index: 1;
 }
 
 .color {
@@ -357,6 +334,7 @@ body {
   border: none;
   background-color: #FF6A6A;
   border-radius: 0 25px 25px 0;
+  cursor: pointer;
 }
 .subscribe__form__email__button:hover {
   background-color: #E05C6E;
@@ -392,6 +370,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .brands__wrapper:hover {
   background-color: #F16D7F;
@@ -432,6 +411,7 @@ body {
   text-align: center;
   width: 31px;
   height: 31px;
+  cursor: pointer;
 }
 .slider__content {
   margin: 11px auto 42px auto;
@@ -516,6 +496,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 22px;
+  cursor: pointer;
 }
 
 .catalogsProducts {
@@ -551,6 +532,7 @@ body {
   display: flex;
   gap: 11px;
   align-items: center;
+  cursor: pointer;
 }
 .catalog__head__filter__title__content {
   padding-top: 16px;
@@ -565,6 +547,7 @@ body {
   padding: 11px;
   border-left: 5px solid #FF6A6A;
   border-bottom: 1px solid rgb(235, 235, 235);
+  cursor: pointer;
 }
 .catalog__head__filter__title__content > div {
   padding: 16px;
@@ -596,9 +579,130 @@ body {
 .catalog__head__sort__values__title {
   list-style: none;
   display: flex;
+  cursor: pointer;
 }
 .catalog__head__sort__values__title > img {
   margin-left: 10px;
+}
+
+.basket__top {
+  height: 148px;
+  width: calc(100% - 230px);
+  background-color: rgb(248, 243, 244);
+  color: #FF6A6A;
+  padding: 60px 0 60px 230px;
+}
+.basket__content {
+  width: 1140px;
+  margin: 96px auto 128px;
+  display: flex;
+}
+.basket__content__form {
+  max-width: 360px;
+  width: 100%;
+  margin-left: 128px;
+}
+.basket__content__form__adress__title {
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 360px;
+}
+.basket__content__form__adress__input {
+  width: calc(100% - 20px);
+  height: 45px;
+  margin-bottom: 20px;
+  padding-left: 17px;
+  font-size: 13px;
+  border: 1px solid rgb(74, 74, 74);
+}
+.basket__content__form__adress__button {
+  cursor: pointer;
+  height: 35px;
+  background-color: #fff;
+  color: rgb(74, 74, 74);
+  padding: 0 14px;
+  font-size: 11px;
+  border: 1px solid rgb(74, 74, 74);
+}
+.basket__content__form__checkout {
+  width: 326px;
+  height: 214px;
+  background-color: rgb(245, 243, 243);
+  margin-top: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 34px;
+}
+.basket__content__form__checkout__sub {
+  font-size: 11px;
+  margin-top: 39px;
+}
+.basket__content__form__checkout__sub span {
+  margin-left: 20px;
+}
+.basket__content__form__checkout__grand {
+  font-size: 11px;
+  margin-top: 12px;
+}
+.basket__content__form__checkout__grand span {
+  margin-left: 20px;
+  color: #FF6A6A;
+}
+.basket__content__form__checkout__button {
+  font-size: 16px;
+  color: #FFF;
+  padding: 15px 41px;
+  background-color: #FF6A6A;
+  margin-top: 39px;
+  cursor: pointer;
+}
+.basket__content__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.basket__content__buttons > button {
+  padding: 17px 40px;
+  font-size: 14px;
+  border: 1px solid rgb(164, 164, 164);
+  background-color: #fff;
+  cursor: pointer;
+}
+.basket__content__product {
+  width: 652px;
+  display: flex;
+  box-shadow: 0px 0px 12px 2px rgba(34, 60, 80, 0.14);
+  margin-bottom: 40px;
+}
+.basket__content__product__logo {
+  width: 262px;
+  height: 306px;
+}
+.basket__content__product__info {
+  max-width: 262px;
+  max-height: 306px;
+  padding: 22px 97px 62px 31px;
+  position: relative;
+}
+.basket__content__product__info > img {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  right: 22px;
+  cursor: pointer;
+}
+.basket__content__product__info__title {
+  font-size: 24px;
+}
+.basket__content__product__info__size {
+  display: flex;
+  flex-direction: column;
+  margin-top: 42px;
+  gap: 6px;
+  font-size: 22px;
+}
+.basket__content__product__info__size p > span {
+  color: #FF6A6A;
 }
 
 @media (min-width: 1650px) {
@@ -667,9 +771,6 @@ body {
     margin-right: 0;
     position: absolute;
     right: 16px;
-  }
-  .unvisible {
-    display: none;
   }
   .content {
     width: 100%;
@@ -769,5 +870,14 @@ body {
   }
   .contacts__brands {
     margin: 0;
+  }
+  .subscribe__info {
+    width: 320px;
+  }
+  .subscribe__form {
+    width: 320px;
+  }
+  .subscribe__form__email {
+    width: 320px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -15,28 +15,64 @@ body {
     width: 100%;
     height: 75px;
     background-color: #222222;
-}
+    overflow: hidden;
 
-.logo {
-    float: left;
-    margin-top: 18px;
-    margin-left: 231px;
-    height: 38px;
+    &__logo {
+        float: left;
+        margin-top: 18px;
+        margin-left: 231px;
+        height: 38px;
 
-    &_img1 {
-        width: 44px;
-        margin-right: 41px;
+        &__img1 {
+            width: 44px;
+            margin-right: 41px;
+            cursor: pointer;
+        }
+
+        &__img2 {
+            width: 26px;
+            cursor: pointer;
+        }
     }
 
-    &__img2 {
-        width: 26px;
+    &__menu {
+        float: right;
+        margin-top: 26px;
+        margin-right: 240px;
+        display: flex;
+        &__details {
+            &__summary {
+                list-style: none;
+                cursor: pointer;
+            }
+        }
+        &__content {
+            position: absolute;
+            right: -232px;
+            top: 75px;
+            z-index: 1000;
+            background: #FFF;
+            width: 232px;
+            .header__menu__details[open] &{
+                right: 0;
+                transition: right 1s;
+            }
+            &__title {
+                padding: 37px 0 24px 34px;
+            }
+            &__lists {
+                padding-left: 33px;
+                list-style: none;
+                &__title {
+                    color: $mainColor;
+                }
+                &__items {
+                    color: rgba(111, 110, 110, 1);
+                    padding: 11px 22px;
+                }
+            }
+        }
     }
-}
-
-.menu {
-    float: right;
-    margin-top: 26px;
-    margin-right: 240px;
 }
 
 .center {
@@ -77,70 +113,6 @@ body {
             border: 1px solid #F16D7F;
         }
     }
-
-    &__menu {
-        position: absolute;
-        width: 232px;
-        height: 634px;
-        top: 0;
-        padding-top: 75px;
-        right: 0;
-        padding-left: 50px;
-
-        &:hover {
-            z-index: 11;
-        }
-
-        &__title {
-            z-index: 4;
-            font-size: 14px;
-            font-weight: 700;
-            margin: 32px 0 24px 33px;
-        }
-
-        &__lists {
-            margin-left: 32px;
-            margin-bottom: 20px;
-
-            &__title {
-                font-size: 14px;
-                font-weight: 400;
-                color:
-                    #F16D7F;
-                list-style-type: none;
-            }
-
-            &__items {
-                font-size: 14px;
-                font-weight: 400;
-                color:
-                    #6F6E6E;
-                list-style-type: none;
-                margin: 12px 0 12px 22px;
-
-            }
-        }
-    }
-}
-
-.fon1 {
-    position: absolute;
-    width: 50px;
-    height: 559px;
-    top: 75px;
-    padding-top: 75px;
-    right: 0;
-    margin-right: 232px;
-    z-index: 1;
-}
-
-.fon2 {
-    position: absolute;
-    width: 232px;
-    height: 75px;
-    top: 0;
-    right: 0;
-    z-index: 1;
 }
 
 .color {
@@ -401,6 +373,7 @@ body {
                 background-color:
                     $mainColor;
                 border-radius: 0 25px 25px 0;
+                cursor: pointer;
 
                 &:hover {
                     background-color:
@@ -444,6 +417,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         &:hover {
             background-color: #F16D7F;
@@ -490,6 +464,7 @@ body {
             text-align: center;
             width: 31px;
             height: 31px;
+            cursor: pointer;
         }
     }
 
@@ -587,6 +562,7 @@ body {
         align-items: center;
         justify-content: center;
         gap: 22px;
+        cursor: pointer;
     }
 }
 
@@ -606,13 +582,10 @@ body {
             font-size: 14px;
             list-style: none;
             padding: 16px;
-            // position: relative;
-            // border: 1px solid red;
 
             & div {
                 margin-top: 16px;
                 min-width: 328px;
-                // position: absolute;
                 background-color: #fff;
             }
 
@@ -627,20 +600,25 @@ body {
                 display: flex;
                 gap: 11px;
                 align-items: center;
+                cursor: pointer;
 
                 &__content {
                     padding-top: 16px;
                     padding-bottom: 16px;
+
                     &[open] summary {
                         color: $mainColor;
                     }
+
                     & summary {
                         color: black;
                         list-style: none;
                         padding: 11px;
                         border-left: 5px solid $mainColor;
                         border-bottom: 1px solid rgba(235, 235, 235, 1);
+                        cursor: pointer;
                     }
+
                     &>div {
                         padding: 16px;
                         color: black;
@@ -660,6 +638,7 @@ body {
             gap: 28px;
             left: calc(390px + 230px);
             position: absolute;
+
             &__values {
                 position: relative;
 
@@ -679,6 +658,7 @@ body {
                 &__title {
                     list-style: none;
                     display: flex;
+                    cursor: pointer;
 
                     &>img {
                         margin-left: 10px;
@@ -689,13 +669,137 @@ body {
     }
 
 }
+.basket {
+    &__top {
+        height: 148px;
+        width: calc(100% - 230px);
+        background-color: rgba(248, 243, 244, 1);
+        color: $mainColor;
+        padding:60px 0 60px 230px;
+    }
+    &__content {
+        width: calc(652px + 360px + 128px);
+        margin: 96px auto 128px;
+        display: flex;
+        &__form {
+            max-width: 360px;
+            width: 100%;
+            margin-left: 128px;
+            &__adress {
+                &__title {
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                    width: 360px;
+                }
+                &__input {
+                    width: calc(100% - 20px);
+                    height: 45px;
+                    margin-bottom: 20px;
+                    padding-left: 17px;;
+                    font-size: 13px;
+                    border:1px solid rgba(74, 74, 74, 1);
+                }
+                &__button {
+                    cursor: pointer;
+                    height: 35px;
+                    background-color: #fff;
+                    color: rgba(74, 74, 74, 1);
+                    padding: 0 14px;
+                    font-size: 11px;
+                    border:1px solid rgba(74, 74, 74, 1);
 
+                }
+            }
+            &__checkout {
+                width: calc(360px - 34px);
+                height: 214px;;
+                background-color: rgba(245, 243, 243, 1);
+                margin-top: 57px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding-right: 34px;
+                &__sub{
+                    font-size: 11px;
+                    margin-top: 39px;
+                    & span {
+                        margin-left: 20px;
+                    }
+                }
+                &__grand {
+                    font-size: 11px;
+                    margin-top: 12px;
+                    & span {
+                        margin-left: 20px;
+                        color: $mainColor;
+                    }
+                }
+                &__button {
+                    font-size: 16px;
+                    color: #FFF;
+                    padding: 15px 41px;
+                    background-color: $mainColor;
+                    margin-top: 39px;
+                    cursor: pointer;
+                }
+            }
+        }
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+            & > button {
+                padding: 17px 40px;
+                font-size: 14px;
+                border: 1px solid rgba(164, 164, 164, 1);
+                background-color: #fff;
+                cursor: pointer;
+            }
+        }
+        &__product {
+            width: calc(390px + 262px);
+            display: flex;
+            box-shadow: $shadow;
+            margin-bottom: 40px;
+            &__logo {
+                width: 262px;
+                height: 306px;
+            }
+            &__info {
+                max-width: 262px;
+                max-height: 306px;
+                padding: 22px 97px 62px 31px;
+                position: relative;
+                &>img {
+                    position: absolute;
+                    right: 0;
+                    top:28px;
+                    right: 22px;
+                    cursor: pointer;
+                }
+                &__title {
+                    font-size: 24px;
+                }
+                &__size {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 42px;
+                    gap: 6px;
+                    font-size: 22px;
+                    p>span {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+}
 @media (min-width: 1650px) {
     .content {
         max-width: 100%;
         justify-content: center;
     }
 }
+
 
 @media (max-width: 1024px) and (min-width: 768px) {
     .logo {
@@ -775,10 +879,6 @@ body {
         margin-right: 0;
         position: absolute;
         right: 16px;
-    }
-
-    .unvisible {
-        display: none;
     }
 
     .content {
@@ -903,6 +1003,20 @@ body {
 
         &__brands {
             margin: 0;
+        }
+    }
+
+    .subscribe {
+        &__info {
+            width: 320px;
+        }
+
+        &__form {
+            width: 320px;
+
+            &__email {
+                width: 320px;
+            }
         }
     }
 }
