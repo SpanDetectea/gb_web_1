@@ -705,6 +705,65 @@ body {
   color: #FF6A6A;
 }
 
+.registration {
+  display: flex;
+  width: 1140px;
+  margin: 64px auto 96px;
+}
+.registration__form {
+  width: 360px;
+  margin-right: 128px;
+}
+.registration__form__radio {
+  margin-top: 31px;
+  margin-bottom: 33px;
+  color: rgb(164, 164, 164);
+}
+.registration__form__radio ~ label {
+  color: rgb(164, 164, 164);
+}
+.registration__form__title {
+  font-size: 16px;
+  color: rgb(164, 164, 164);
+  margin-bottom: 20px;
+}
+.registration__form__text {
+  padding: 13px 17px;
+  width: 326px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(164, 164, 164);
+}
+.registration__form__description {
+  color: rgb(164, 164, 164);
+  margin-bottom: 39px;
+}
+.registration__form > button {
+  padding: 16px 29px;
+  color: #FFF;
+  background-color: #FF6A6A;
+  border: none;
+  cursor: pointer;
+}
+.registration__form__img {
+  margin-left: 20px;
+}
+.registration__info {
+  width: 652px;
+  font-size: 24px;
+}
+.registration__info__title {
+  margin-bottom: 22px;
+}
+.registration__info__description {
+  margin-bottom: 21px;
+}
+.registration__info__plus {
+  margin-bottom: 16px;
+}
+.registration__info__plus > img {
+  margin-right: 22px;
+}
+
 @media (min-width: 1650px) {
   .content {
     max-width: 100%;

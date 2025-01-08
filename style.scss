@@ -40,12 +40,14 @@ body {
         margin-top: 26px;
         margin-right: 240px;
         display: flex;
+
         &__details {
             &__summary {
                 list-style: none;
                 cursor: pointer;
             }
         }
+
         &__content {
             position: absolute;
             right: -232px;
@@ -53,19 +55,24 @@ body {
             z-index: 1000;
             background: #FFF;
             width: 232px;
-            .header__menu__details[open] &{
+
+            .header__menu__details[open] & {
                 right: 0;
                 transition: right 1s;
             }
+
             &__title {
                 padding: 37px 0 24px 34px;
             }
+
             &__lists {
                 padding-left: 33px;
                 list-style: none;
+
                 &__title {
                     color: $mainColor;
                 }
+
                 &__items {
                     color: rgba(111, 110, 110, 1);
                     padding: 11px 22px;
@@ -669,36 +676,43 @@ body {
     }
 
 }
+
 .basket {
     &__top {
         height: 148px;
         width: calc(100% - 230px);
         background-color: rgba(248, 243, 244, 1);
         color: $mainColor;
-        padding:60px 0 60px 230px;
+        padding: 60px 0 60px 230px;
     }
+
     &__content {
         width: calc(652px + 360px + 128px);
         margin: 96px auto 128px;
         display: flex;
+
         &__form {
             max-width: 360px;
             width: 100%;
             margin-left: 128px;
+
             &__adress {
                 &__title {
                     font-size: 16px;
                     margin-bottom: 20px;
                     width: 360px;
                 }
+
                 &__input {
                     width: calc(100% - 20px);
                     height: 45px;
                     margin-bottom: 20px;
-                    padding-left: 17px;;
+                    padding-left: 17px;
+                    ;
                     font-size: 13px;
-                    border:1px solid rgba(74, 74, 74, 1);
+                    border: 1px solid rgba(74, 74, 74, 1);
                 }
+
                 &__button {
                     cursor: pointer;
                     height: 35px;
@@ -706,34 +720,41 @@ body {
                     color: rgba(74, 74, 74, 1);
                     padding: 0 14px;
                     font-size: 11px;
-                    border:1px solid rgba(74, 74, 74, 1);
+                    border: 1px solid rgba(74, 74, 74, 1);
 
                 }
             }
+
             &__checkout {
                 width: calc(360px - 34px);
-                height: 214px;;
+                height: 214px;
+                ;
                 background-color: rgba(245, 243, 243, 1);
                 margin-top: 57px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
                 padding-right: 34px;
-                &__sub{
+
+                &__sub {
                     font-size: 11px;
                     margin-top: 39px;
+
                     & span {
                         margin-left: 20px;
                     }
                 }
+
                 &__grand {
                     font-size: 11px;
                     margin-top: 12px;
+
                     & span {
                         margin-left: 20px;
                         color: $mainColor;
                     }
                 }
+
                 &__button {
                     font-size: 16px;
                     color: #FFF;
@@ -744,10 +765,12 @@ body {
                 }
             }
         }
+
         &__buttons {
             display: flex;
             justify-content: space-between;
-            & > button {
+
+            &>button {
                 padding: 17px 40px;
                 font-size: 14px;
                 border: 1px solid rgba(164, 164, 164, 1);
@@ -755,36 +778,43 @@ body {
                 cursor: pointer;
             }
         }
+
         &__product {
             width: calc(390px + 262px);
             display: flex;
             box-shadow: $shadow;
             margin-bottom: 40px;
+
             &__logo {
                 width: 262px;
                 height: 306px;
             }
+
             &__info {
                 max-width: 262px;
                 max-height: 306px;
                 padding: 22px 97px 62px 31px;
                 position: relative;
+
                 &>img {
                     position: absolute;
                     right: 0;
-                    top:28px;
+                    top: 28px;
                     right: 22px;
                     cursor: pointer;
                 }
+
                 &__title {
                     font-size: 24px;
                 }
+
                 &__size {
                     display: flex;
                     flex-direction: column;
                     margin-top: 42px;
                     gap: 6px;
                     font-size: 22px;
+
                     p>span {
                         color: $mainColor;
                     }
@@ -793,6 +823,70 @@ body {
         }
     }
 }
+
+.registration {
+    display: flex;
+    width: calc(360px + 652px + 128px);
+    margin: 64px auto 96px;
+
+    &__form {
+        width: 360px;
+        margin-right: 128px;
+        &__radio{
+            margin-top: 31px;
+            margin-bottom: 33px;
+            color: rgba(164, 164, 164, 1);
+            & ~ label {
+                color: rgba(164, 164, 164, 1);
+            }
+        }
+        &__title {
+            font-size: 16px;
+            color: rgba(164, 164, 164, 1);
+            margin-bottom: 20px;
+        }
+        &__text {
+            padding: 13px 17px;
+            width: calc(360px - 34px);
+            margin-bottom: 20px;
+            border: 1px solid rgba(164, 164, 164, 1);
+        }
+        &__description {
+            color: rgba(164, 164, 164, 1);
+            margin-bottom: 39px;
+        }
+        & > button {
+            padding: 16px 29px;
+            color: #FFF;
+            background-color: $mainColor;
+            border: none;
+            cursor: pointer;
+        }
+        &__img {
+            margin-left: 20px;
+        }
+    }
+
+    &__info {
+        width: 652px;
+        font-size: 24px;
+        &__title {
+            margin-bottom: 22px;
+        }
+
+        &__description {
+            margin-bottom: 21px;
+        }
+
+        &__plus {
+            margin-bottom: 16px;
+            & > img {
+                margin-right: 22px;
+            }
+        }
+    }
+}
+
 @media (min-width: 1650px) {
     .content {
         max-width: 100%;
