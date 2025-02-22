@@ -223,6 +223,18 @@ body {
             justify-content: flex-start;
             background-color: rgba(248, 248, 248, 1);
 
+            &__button {
+                position: absolute;
+                top: calc(420px / 2);
+                left: calc(50% - 139px / 2);
+                width: 139px;
+                height: 44px;
+                border: none;
+                background-color: rgba(28,28,28,0);
+                visibility: hidden;
+                cursor: pointer;
+            }
+           
             &:hover::before {
                 position: absolute;
                 width: 100%;
@@ -231,16 +243,20 @@ body {
                 background-color: #3A3838;
                 opacity: 86%;
             }
-
-            &:hover::after {
-                position: absolute;
-                width: 100%;
-                height: 72%;
-                content: "";
-                background-image: url("img/cart.svg");
-                background-repeat: no-repeat;
-                background-position: center;
+            &:hover &__button {
+                visibility: visible;
             }
+            // &::after {
+            //     position: absolute;
+            //     width: 139px;
+            //     height: 44px;
+            //     content: "";
+            //     background-image: url("img/cart.svg");
+            //     cursor: pointer;
+            //     top: calc(420px / 2);
+            //     left: calc(50% - 139px / 2);
+            // }
+            
         }
 
         &__title {
@@ -275,6 +291,12 @@ body {
             background-color: $mainColor;
         }
     }
+}
+.visible {
+    visibility: visible;
+}
+.unvisible {
+    visibility: hidden;
 }
 
 .offer {
@@ -939,7 +961,9 @@ body {
         }
     }
 }
-
+.cart {
+    text-align: center;
+}
 @media (min-width: 1650px) {
     .content {
         max-width: 100%;

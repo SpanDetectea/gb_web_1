@@ -9,10 +9,21 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
+  <style>
+    li {
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      /* display: flex; */
+      align-items: center;
+      flex-direction: column;
+    }
+  </style>
 </head>
 
 <body>
-  
+
   <div class="header">
     <div class="header__logo">
       <img src="img/Group2.svg" alt="image" class="header__logo__img1">
@@ -20,7 +31,8 @@
     </div>
     <div class="header__menu">
       <details class="header__menu__details">
-        <summary class="header__menu__details__summary"><img src="img/Forma2.svg" class="header__menu__img" alt="image"></summary>
+        <summary class="header__menu__details__summary"><img src="img/Forma2.svg" class="header__menu__img" alt="image">
+        </summary>
         <div class="header__menu__content">
           <h3 class="header__menu__content__title">MENU</h3>
           <ul class="header__menu__content__lists">
@@ -50,11 +62,13 @@
         </div>
       </details>
       <details class="header__menu__details">
-        <summary class="header__menu__details__summary"> <img src="img/Forma3.svg" class="header__menu__img center" alt="image">
+        <summary class="header__menu__details__summary"> <img src="img/Forma3.svg" class="header__menu__img center"
+            alt="image">
         </summary>
-      </details >
+      </details>
       <details class="header__menu__details">
-        <summary class="header__menu__details__summary"> <img src="img/Forma4.svg" class="header__menu__img" alt="image">
+        <summary class="header__menu__details__summary"> <img src="img/Forma4.svg" class="header__menu__img"
+            alt="image">
         </summary>
       </details>
 
@@ -67,7 +81,7 @@
       <span class="color">FASHION</span>
     </div>
   </div>
-  
+
   <div class="stocks">
     <div class="stocks__items items1">
       <div class="stocks__items__text">30% OFF</div>
@@ -100,6 +114,8 @@
           arbiter of cool Kym Ellery teams up with Moda Operandi.
         </div>
         <div class="products__wrapper__price">$52.00</div>
+        <button class="products__wrapper__items__button"><img src="img/cart.svg" alt=""
+            class="products__wrapper__items__button-img"></button>
       </div>
       <div class="products__wrapper__items">
         <img src="img/img2svg.svg" class="products__wrapper__img" alt="image">
@@ -147,7 +163,12 @@
         <div class="products__wrapper__price">$52.00</div>
       </div>
     </div><button class="products__button">Browse All
-        Product</button>
+      Product</button>
+  </div>
+  <div class="cart">
+    <h2>Корзина товаров</h2>
+    <ul class="cart-lists">
+    </ul>
   </div>
   <div class="footer">
     <div class="offer">
